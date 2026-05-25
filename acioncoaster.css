@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-logo {
+    width: 70px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111827;
+    font-weight: 600;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff7b00;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(255,255,255,0.96)),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,0.025) 0px,
+            rgba(0,0,0,0.025) 2px,
+            transparent 2px,
+            transparent 140px
+        );
+
+    overflow: hidden;
+}
+
+/* Achterbahn-Schienen Effekt */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180%;
+    height: 260px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #cfd4dc 0px,
+            #cfd4dc 8px,
+            transparent 8px,
+            transparent 42px
+        );
+
+    border-top: 8px solid #aeb4bd;
+    border-bottom: 8px solid #aeb4bd;
+
+    border-radius: 120px;
+
+    transform: rotate(-8deg);
+
+    top: 130px;
+    left: -20%;
+
+    opacity: 0.35;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180%;
+    height: 260px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #d5dae2 0px,
+            #d5dae2 8px,
+            transparent 8px,
+            transparent 42px
+        );
+
+    border-top: 8px solid #c1c7d0;
+    border-bottom: 8px solid #c1c7d0;
+
+    border-radius: 120px;
+
+    transform: rotate(9deg);
+
+    bottom: 80px;
+    right: -30%;
+
+    opacity: 0.22;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 850px;
+    padding: 40px;
+}
+
+.main-logo {
+    width: 180px;
+    margin-bottom: 30px;
+
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.08));
+}
+
+.hero-content h1 {
+    font-size: 78px;
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    color: #111827;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 21px;
+    line-height: 1.7;
+
+    color: #6b7280;
+
+    margin-bottom: 40px;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.social-buttons a {
+    text-decoration: none;
+
+    color: #111827;
+    font-weight: 700;
+
+    background: white;
+
+    padding: 16px 28px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+
+    transition: 0.3s;
+}
+
+.social-buttons a:hover {
+    transform: translateY(-6px);
+
+    border-color: #ff7b00;
+
+    color: #ff7b00;
+
+    box-shadow:
+        0 18px 35px rgba(255,123,0,0.18);
+}
+
+/* ---------------- ORANGE TRANSITION ---------------- */
+
+.orange-transition {
+    position: relative;
+
+    height: 180px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff 0%,
+            #fff4ea 30%,
+            #ffb15e 70%,
+            #ff7b00 100%
+        );
+}
+
+/* ---------------- NEWS SECTION ---------------- */
+
+main {
+    background: #ff7b00;
+}
+
+.news-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 90px 30px;
+}
+
+.news-section h2 {
+    text-align: center;
+
+    font-size: 52px;
+
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.section-text {
+    text-align: center;
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 18px;
+
+    margin-bottom: 45px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.news-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-card span {
+    display: inline-block;
+
+    background: #ff7b00;
+    color: white;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.news-card h3 {
+    font-size: 24px;
+
+    margin-bottom: 14px;
+
+    color: #111827;
+}
+
+.news-card p {
+    color: #6b7280;
+
+    line-height: 1.7;
+}
+
+/* ---------------- HEIDE PARK SECTION ---------------- */
+
+.heidepark-section {
+    padding: 90px 30px 120px;
+}
+
+.heide-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 50px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(10px);
+
+    padding: 50px;
+
+    border-radius: 35px;
+}
+
+.fan-logo {
+    width: 220px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 30px;
+}
+
+.heide-content h2 {
+    font-size: 46px;
+
+    color: white;
+
+    margin-bottom: 18px;
+}
+
+.heide-content p {
+    color: rgba(255,255,255,0.88);
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.social-buttons.orange {
+    justify-content: flex-start;
+}
+
+.social-buttons.orange a {
+    background: white;
+    color: #ff7b00;
+}
+
+.social-buttons.orange a:hover {
+    background: #111827;
+    color: white;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #111827;
+
+    color: rgba(255,255,255,0.6);
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 950px) {
+
+    .hero-content h1 {
+        font-size: 56px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heide-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-buttons.orange {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .main-logo {
+        width: 140px;
+    }
+}
